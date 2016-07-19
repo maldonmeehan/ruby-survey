@@ -67,3 +67,10 @@ patch('/questions/:id') do
   @question.update({:description => description})
   erb(:question_edit)
 end
+
+delete('/questions/:id/delete') do
+  @question = Question.find(params.fetch('id').to_i())
+  @question.delete()
+  @questions = Question.all()
+  erb(:questions)
+end

@@ -85,3 +85,22 @@ describe('edit a question path', {:type => :feature}) do
     expect(page).to have_content('Do you hate cats?')
   end
 end
+
+describe('remove a question path', {:type => :feature}) do
+  it('allows the user to edit the contents of the question') do
+    visit('/')
+    click_link('Add new survey')
+    fill_in("name", :with => 'cat')
+    click_button('Add survey')
+    expect(page).to have_content('cat')
+    visit('/')
+    click_link('Add new question')
+    fill_in("description", :with => "Do you like cats?")
+    click_button('Add question')
+    expect(page).to have_content('Do you like cats?')
+    click_link('Do you like cats?')
+    expect(page).to have_content("Individual question page")
+    click_button('Delete')
+    expect(page).to have_content('Current Questions in Database')
+  end
+end
