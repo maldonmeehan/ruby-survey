@@ -1,0 +1,33 @@
+<h1>Individual question page</h1>
+
+<h2><%= @question.description() %></h2>
+
+<form action="/questions/<%= @question.id() %>" method="post">
+  <input name="_method" type="hidden" value="patch">
+  <label for="description">Change the question:</label>
+  <input id="description" name="description" type="text">
+
+  <button type="submit">Update</button>
+</form>
+<hr>
+
+
+
+<form action="/questions/<%= @question.id() %>/delete" method="post">
+  <input name="_method" type="hidden" value="delete">
+
+  <button type="submit">Delete</button>
+</form>
+
+
+
+<hr>
+<div class='container'>
+  <button><a href="/employees/new">Add new employee</a></button>
+  <button><a href="/divisions/new">Add new division</a></button>
+  <hr>
+  <button><a href="/employees">View all employee</a></button>
+  <button><a href="/divisions">View all division</a></button>
+  <hr>
+  <button><a href="/">Home</a></button>
+</div>

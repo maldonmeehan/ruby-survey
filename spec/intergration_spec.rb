@@ -65,3 +65,23 @@ describe('view single question path', {:type => :feature}) do
     expect(page).to have_content("Individual question page")
   end
 end
+
+describe('edit a question path', {:type => :feature}) do
+  it('allows the user to edit the contents of a question') do
+    visit('/')
+    click_link('Add new survey')
+    fill_in("name", :with => 'cat')
+    click_button('Add survey')
+    expect(page).to have_content('cat')
+    visit('/')
+    click_link('Add new question')
+    fill_in("description", :with => "Do you like cats?")
+    click_button('Add question')
+    expect(page).to have_content('Do you like cats?')
+    click_link('Do you like cats?')
+    expect(page).to have_content("Individual question page")
+    fill_in('description', :with => "Do you hate cats?")
+    click_button('Update')
+    expect(page).to have_content('Do you hate cats?')
+  end
+end

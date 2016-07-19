@@ -53,5 +53,17 @@ end
 
 get('/questions/:id') do
   @question = Question.find(params.fetch('id').to_i())
-  erb(:question)
+  erb(:question_edit)
+end
+
+get('/questions/:id/edit') do
+  @question = Question.find(params.fetch('id').to_i())
+  erb(:question_edit)
+end
+
+patch('/questions/:id') do
+  description = params.fetch("description")
+  @question = Question.find(params.fetch("id").to_i())
+  @question.update({:description => description})
+  erb(:question_edit)
 end
