@@ -74,3 +74,22 @@ delete('/questions/:id/delete') do
   @questions = Question.all()
   erb(:questions)
 end
+
+get('/surveys/:id/edit') do
+  @survey = Survey.find(params.fetch("id").to_i())
+  erb(:survey_edit)
+end
+
+patch('/surveys/:id/edit') do
+  name = params.fetch('name')
+  @survey = Survey.find(params.fetch("id").to_i())
+  @survey.update({:name => name})
+  erb(:survey)
+end
+
+delete('/surveys/:id/delete') do
+  @survey = Survey.find(params.fetch('id').to_i())
+  @survey.delete()
+  @surveys = Survey.all()
+  erb(:surveys)
+end

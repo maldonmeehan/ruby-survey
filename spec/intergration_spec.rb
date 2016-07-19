@@ -34,6 +34,35 @@ describe('view single survey instance path', {:type => :feature}) do
   end
 end
 
+describe('update a surveys name path', {:type => :feature}) do
+  it('allows the user to update the survey name') do
+    visit('/')
+    click_link('Add new survey')
+    fill_in("name", :with => 'cat')
+    click_button('Add survey')
+    expect(page).to have_content('cat')
+    click_link("cat")
+    click_link("Update")
+    fill_in('name', :with => 'dog')
+    click_button('Update')
+    expect(page).to have_content('dog')
+  end
+end
+
+describe('delete a survey', {:type => :feature}) do
+  it('allows the user to delete a survey') do
+    visit('/')
+    click_link('Add new survey')
+    fill_in("name", :with => 'cat')
+    click_button('Add survey')
+    expect(page).to have_content('cat')
+    click_link("cat")
+    click_link("Update")
+    click_button('Delete')
+    expect(page).to have_content('Current Surveys in Database')
+  end
+end
+
 describe('add a new question', {:type => :feature}) do
   it('allows the user to add a question') do
     visit('/')

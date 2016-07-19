@@ -1,11 +1,9 @@
-<h1>Individual question page</h1>
+<h1>Update <%= @survey.name() %> </h1>
 
-<h2><%= @question.description() %></h2>
-
-<form action="/questions/<%= @question.id() %>" method="post">
+<form action="/surveys/<%= @survey.id() %>/edit" method="post">
   <input name="_method" type="hidden" value="patch">
-  <label for="description">Change the question:</label>
-  <input id="description" name="description" type="text">
+  <label for="name">Change the name of the survey:</label>
+  <input id="name" name="name" type="text">
 
   <button type="submit">Update</button>
 </form>
@@ -13,7 +11,7 @@
 
 
 
-<form action="/questions/<%= @question.id() %>/delete" method="post">
+<form action="/surveys/<%= @survey.id() %>/delete" method="post">
   <input name="_method" type="hidden" value="delete">
 
   <button type="submit">Delete</button>
@@ -21,9 +19,10 @@
 
 
 
+
 <hr>
 <div class='container'>
-  <button><a href="/questions/new">Add new question</a></button>
+  <button><a href="/quesitions/new">Add new question</a></button>
   <button><a href="/surveys/new">Add new survey</a></button>
   <hr>
   <button><a href="/questions">View all question</a></button>

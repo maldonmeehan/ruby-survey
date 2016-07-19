@@ -1,3 +1,27 @@
 <h1>Individual survey page</h1>
 
 <h2><%= @survey.name() %></h2>
+
+<% if @survey.questions().any?() %>
+  <h3>Here are all the questions in this survey</h3>
+
+  <ul>
+    <% @survey.questions().each() do |question| %>
+      <li><%= question.description() %></li>
+    <% end %>
+  </ul>
+
+  <% else %>
+    <p>There are currently no questions for this survey</p>
+<% end %>
+
+<p><a class="green" href="/surveys/<%= @survey.id() %>/edit">Update</a></p>
+<div class='container'>
+  <button><a href="/questions/new">Add new question</a></button>
+  <button><a href="/surveys/new">Add new survey</a></button>
+  <hr>
+  <button><a href="/questions">View all question</a></button>
+  <button><a href="/surveys">View all survey</a></button>
+  <hr>
+  <button><a href="/">Home</a></button>
+</div>
