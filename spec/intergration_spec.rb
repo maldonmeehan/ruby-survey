@@ -18,7 +18,7 @@ describe('add a new survey', {:type => :feature}) do
     click_link('Add new survey')
     fill_in("name", :with => 'cat')
     click_button('Add survey')
-    expect(page).to have_content('cat')
+    expect(page).to have_content('CAT')
   end
 end
 
@@ -28,8 +28,8 @@ describe('view single survey instance path', {:type => :feature}) do
     click_link('Add new survey')
     fill_in("name", :with => 'cat')
     click_button('Add survey')
-    expect(page).to have_content('cat')
-    click_link("cat")
+    expect(page).to have_content('CAT')
+    click_link("CAT")
     expect(page).to have_content('Individual survey page')
   end
 end
@@ -40,12 +40,12 @@ describe('update a surveys name path', {:type => :feature}) do
     click_link('Add new survey')
     fill_in("name", :with => 'cat')
     click_button('Add survey')
-    expect(page).to have_content('cat')
-    click_link("cat")
+    expect(page).to have_content('CAT')
+    click_link("CAT")
     click_link("Update")
-    fill_in('name', :with => 'dog')
+    fill_in('name', :with => 'DOG')
     click_button('Update')
-    expect(page).to have_content('dog')
+    expect(page).to have_content('DOG')
   end
 end
 
@@ -53,10 +53,10 @@ describe('delete a survey', {:type => :feature}) do
   it('allows the user to delete a survey') do
     visit('/')
     click_link('Add new survey')
-    fill_in("name", :with => 'cat')
+    fill_in("name", :with => 'CAT')
     click_button('Add survey')
-    expect(page).to have_content('cat')
-    click_link("cat")
+    expect(page).to have_content('CAT')
+    click_link("CAT")
     click_link("Update")
     click_button('Delete')
     expect(page).to have_content('Current Surveys in Database')
@@ -69,7 +69,7 @@ describe('add a new question', {:type => :feature}) do
     click_link('Add new survey')
     fill_in("name", :with => 'cat')
     click_button('Add survey')
-    expect(page).to have_content('cat')
+    expect(page).to have_content('CAT')
     visit('/')
     click_link('Add new question')
     fill_in("description", :with => "Do you like cats?")
@@ -84,7 +84,7 @@ describe('view single question path', {:type => :feature}) do
     click_link('Add new survey')
     fill_in("name", :with => 'cat')
     click_button('Add survey')
-    expect(page).to have_content('cat')
+    expect(page).to have_content('CAT')
     visit('/')
     click_link('Add new question')
     fill_in("description", :with => "Do you like cats?")
@@ -101,7 +101,7 @@ describe('edit a question path', {:type => :feature}) do
     click_link('Add new survey')
     fill_in("name", :with => 'cat')
     click_button('Add survey')
-    expect(page).to have_content('cat')
+    expect(page).to have_content('CAT')
     visit('/')
     click_link('Add new question')
     fill_in("description", :with => "Do you like cats?")
@@ -121,7 +121,7 @@ describe('remove a question path', {:type => :feature}) do
     click_link('Add new survey')
     fill_in("name", :with => 'cat')
     click_button('Add survey')
-    expect(page).to have_content('cat')
+    expect(page).to have_content('CAT')
     visit('/')
     click_link('Add new question')
     fill_in("description", :with => "Do you like cats?")
