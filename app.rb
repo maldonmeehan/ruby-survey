@@ -22,9 +22,13 @@ end
 
 post("/surveys") do
   name = params.fetch("name")
-  survey = Survey.create({:name => name, :id => nil})
+  @survey = Survey.new({:name => name, :id => nil})
   @surveys = Survey.all()
-  erb(:surveys)
+  if @survey.save()
+    erb(:surveys)
+  else
+    erb(:errors)
+  end
 end
 
 get('/surveys/:id') do
