@@ -13,4 +13,13 @@ describe(Question) do
     expect(question.survey.id()).to(eq(survey.id))
     end
   end
+
+  describe('#options') do
+    it('tells which options belong to a certian question') do
+      test_survey = Survey.create({:name => 'Cats'})
+      test_question = Question.create({:description => 'Which cat are you?', :survey_id => test_survey.id})
+      test_option = Option.create({:answer => 'Calico', :question_id => test_question.id})
+      expect(test_question.options()).to(eq([test_option]))
+    end
+  end
 end
