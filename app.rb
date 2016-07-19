@@ -52,7 +52,11 @@ post('/questions') do
   @survey = Survey.find(survey_id)
   @question = Question.create({:description => description, :survey_id => survey_id, :id => nil})
   @questions = Question.all()
-  erb(:questions)
+  if @question.save()
+    erb(:questions)
+  else
+    erb(:errors)
+  end
 end
 
 get('/questions/:id') do
