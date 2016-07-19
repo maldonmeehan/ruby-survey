@@ -50,3 +50,8 @@ post('/questions') do
   @questions = Question.all()
   erb(:questions)
 end
+
+get('/questions/:id') do
+  @question = Question.find(params.fetch('id').to_i())
+  erb(:question)
+end

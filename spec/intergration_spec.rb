@@ -34,8 +34,8 @@ describe('view single survey instance path', {:type => :feature}) do
   end
 end
 
-describe('add a new survey', {:type => :feature}) do
-  it('allows the user to add a survey') do
+describe('add a new question', {:type => :feature}) do
+  it('allows the user to add a question') do
     visit('/')
     click_link('Add new survey')
     fill_in("name", :with => 'cat')
@@ -46,5 +46,22 @@ describe('add a new survey', {:type => :feature}) do
     fill_in("description", :with => "Do you like cats?")
     click_button('Add question')
     expect(page).to have_content('Do you like cats?')
+  end
+end
+
+describe('view single question path', {:type => :feature}) do
+  it('allows a user to view a single question') do
+    visit('/')
+    click_link('Add new survey')
+    fill_in("name", :with => 'cat')
+    click_button('Add survey')
+    expect(page).to have_content('cat')
+    visit('/')
+    click_link('Add new question')
+    fill_in("description", :with => "Do you like cats?")
+    click_button('Add question')
+    expect(page).to have_content('Do you like cats?')
+    click_link('Do you like cats?')
+    expect(page).to have_content("Individual question page")
   end
 end
