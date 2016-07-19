@@ -1,0 +1,26 @@
+<h1>Current Questions in Database:</h1>
+
+
+<% if @questions.any?() %>
+  <ul>
+    <% @questions.each() do |question| %>
+      <li><a href="/questions/<%= question.id() %>"><%= question.description() %></a></li>
+      <% end %>
+  </ul>
+
+<% else %>
+
+  <p>There are no questions added yet</p>
+
+<% end %>
+
+<hr>
+
+<div class='container'>
+  <button><a href="/questions/new">Add new question</a></button>
+  <button><a href="/surveys/new">Add new survey</a></button>
+  <hr>
+  <button><a href="/surveys">View all surveys</a></button>
+  <hr>
+  <button><a href="/">Home</a></button>
+</div>

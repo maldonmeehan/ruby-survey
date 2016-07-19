@@ -33,3 +33,18 @@ describe('view single survey instance path', {:type => :feature}) do
     expect(page).to have_content('Individual survey page')
   end
 end
+
+describe('add a new survey', {:type => :feature}) do
+  it('allows the user to add a survey') do
+    visit('/')
+    click_link('Add new survey')
+    fill_in("name", :with => 'cat')
+    click_button('Add survey')
+    expect(page).to have_content('cat')
+    visit('/')
+    click_link('Add new question')
+    fill_in("description", :with => "Do you like cats?")
+    click_button('Add question')
+    expect(page).to have_content('Do you like cats?')
+  end
+end

@@ -31,3 +31,22 @@ get('/surveys/:id') do
   @survey = Survey.find(params.fetch("id").to_i())
   erb(:survey)
 end
+
+get('/questions') do
+  @questions = Question.all()
+  erb(:questions)
+end
+
+get('/questions/new') do
+  @surveys = Survey.all()
+  erb(:question_form)
+end
+
+post('/questions') do
+  description = params.fetch('description')
+  survey_id = params.fetch('survey_id').to_i()
+  @survey = Survey.find(survey_id)
+  @question = Question.create({:description => description, :survey_id => survey_id, :id => nil})
+  @questions = Question.all()
+  erb(:questions)
+end
