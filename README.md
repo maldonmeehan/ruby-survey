@@ -33,10 +33,6 @@ If you have any questions please feel free to contact Lauren and Maldon on githu
 * Ruby
 * Postgres
 * Sinatra
-* Rspec
-* HTML
-* CSS     
-* Bootstrap
 
 ### License
 
