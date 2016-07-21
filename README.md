@@ -25,6 +25,17 @@ Install required gems:
 $ bundle install
 ```
 
+Run Postgress:
+```
+$ postgres
+```
+
+Open a new window and run:
+```
+$ postgres
+$ rake db:test:prepare
+```
+
 Start the Sinatra webserver:
 ```
 $ ruby app.rb
