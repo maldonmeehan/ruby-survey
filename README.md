@@ -15,7 +15,7 @@ An Epicodus student project to practice Ruby database with Active Record.
 
 ## Setup/Installation Requirements
 
-Install *Stylish Salon* by cloning the repository.  
+Install *Survey App* by cloning the repository.  
 ```
 $ git clone https://github.com/maldonmeehan/survey-activerecord.git
 ```
