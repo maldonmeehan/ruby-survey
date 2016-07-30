@@ -1,33 +1,25 @@
-<h1>Individual question page</h1>
+<h2>Individual question page</h2>
 
-<h2><%= @question.description() %></h2>
+<h3><%= @question.description() %></h3>
 
 <form action="/questions/<%= @question.id() %>" method="post">
   <input name="_method" type="hidden" value="patch">
   <label for="description">Change the question:</label>
   <input id="description" name="description" type="text">
-
-  <button type="submit">Update</button>
+  <button class="btn btn-warning" type="submit">Update</button>
 </form>
 <hr>
-
-
 
 <form action="/questions/<%= @question.id() %>/delete" method="post">
   <input name="_method" type="hidden" value="delete">
-
-  <button type="submit">Delete</button>
+  <button class="btn btn-danger" type="submit">Delete</button>
 </form>
-
-
 
 <hr>
 <div class='container'>
-  <button><a href="/questions/new">Add new question</a></button>
-  <button><a href="/surveys/new">Add new survey</a></button>
+  <button class="btn btn-success"><a href="/questions/new">Add new question</a></button>
+  <button class="btn btn-success"><a href="/surveys/new">Add new survey</a></button>
   <hr>
-  <button><a href="/questions">View all question</a></button>
-  <button><a href="/surveys">View all survey</a></button>
-  <hr>
-  <button><a href="/">Home</a></button>
+  <button class="btn btn-info"><a href="/questions">View all question</a></button>
+  <button class="btn btn-info"><a href="/surveys">View all surveys</a></button>
 </div>

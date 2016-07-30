@@ -1,12 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Survey Galore</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-</head>
-<body>
-  <div class="container">
-    <%= yield %>
-  </div>
-</body>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Shoe Distribution</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="page-header">
+        <h4 class="header">Ruby | Week Four | Databases with Active Record </h4>
+        <h4 class="nav"><a href="/">Home</a></h4>
+      </header>
+      <div class="jumbotron">
+        <h1>Survey Galore!</h1>
+      </div>
+    </div>
+    <div class="container">
+      <%= yield %>
+    </div>
+    <div class="container">
+      <hr>
+      <footer class="footer">
+        <p>Maldon Meehan &copy; Lauren Posey, 2016, Epicodus Student Project</p>
+        <a href="https://www.learnhowtoprogram.com/ruby/databases-with-active-record/survey-point-of-sale">Lesson Link</a>
+      </footer>
+    </div>
+  </body>
 </html>

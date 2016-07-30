@@ -1,0 +1,22 @@
+body {
+  text-align: center;
+}
+.footer {
+  text-align: center;
+}
+
+.header {
+  text-align: left;
+}
+
+.nav {
+  text-align: right;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  font-size: 1.3em;
+}
