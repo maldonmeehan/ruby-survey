@@ -5,7 +5,7 @@
   <label for="name">Change the name of the survey:</label>
   <input id="name" name="name" type="text">
 
-  <button type="submit">Update</button>
+  <button type="submit"  class="btn btn-warning">Update</button>
 </form>
 <hr>
 
@@ -14,13 +14,9 @@
 <form action="/surveys/<%= @survey.id() %>/delete" method="post">
   <input name="_method" type="hidden" value="delete">
 
-  <button type="submit">Delete</button>
+  <button type="submit" class="btn btn-danger">Delete</button>
 </form>
 
 <hr>
-<div class='container'>
-  <button class="btn btn-success"><a href="/surveys/new">Add new survey</a></button>
-  <hr>
-  <button class="btn btn-info"><a href="/questions">View all question</a></button>
-  <button class="btn btn-info"><a href="/surveys">View all surveys</a></button>
-</div>
+<button class="btn btn-success"><a href="/questions/new">Add new question</a></button>
+<button class="btn btn-success"><a href="/surveys/new">Add new survey</a></button>

@@ -15,12 +15,9 @@
     <p>There are currently no questions for this survey</p>
 <% end %>
 
-<p><a class="green" href="/surveys/<%= @survey.id() %>/edit">Update</a></p>
+<button class="btn btn-warning"><a href="/surveys/<%= @survey.id() %>/edit">Update</a></button>
+
 
 <hr>
-<div class='container'>
-  <button class="btn btn-success"><a href="/surveys/new">Add new survey</a></button>
-  <hr>
-  <button class="btn btn-info"><a href="/questions">View all question</a></button>
-  <button class="btn btn-info"><a href="/surveys">View all surveys</a></button>
-</div>
+<button class="btn btn-success"><a href="/questions/new">Add new question</a></button>
+<button class="btn btn-success"><a href="/surveys/new">Add new survey</a></button>
